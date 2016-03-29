@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>百度新闻后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/manger.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--头部-->
+        <div id="header">
+            <h2>百度新闻后台管理系统</h2>
+        </div>
+        <!--main-->
+        <div id="main">
+            <div class="left-nav">
+                <ul>
+                    <li><a id="tj" class="cur" href="#">推 荐</a></li>
+                    <li><a id="bj" href="javascript:">百 家</a></li>
+                    <li><a href="#">本 地</a></li>
+                    <li><a href="#">图 片</a></li>
+                    <li><a href="#">娱 乐</a></li>
+                    <li><a href="#">社 会</a></li>
+                    <li><a href="#">军 事</a></li>
+                    <li><a href="#">科 技</a></li>
+                    <li><a href="#">互联网</a></li>
+                </ul>
+            </div>
+            <div class="right ">
+                <div class="r-top clearfix">
+                    <div class="c-title">推荐新闻列表</div>
+                </div>
+                <div id="r-wrap" class="clearfix">
+                    <div>
+                        <span class="add-news" id="addBtn">+增加新闻</span>
+                        <span class="add-news" id="backBtn">返回新闻列表</span>
+                    </div>
+                    <!-- 增加新闻页面 -->
+                    <div id="addNew" style="display: none;">
+                        <div class="add-wrap">
+                            <h3>新增新闻信息</h3>
+                            <form id="addForm">
+                                <table>
+                                    <tr>
+                                        <td>新闻标题</td>
+                                        <td>
+                                            <input style="width:300px;height:30px" type="text" name="newstitle" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>新闻地址</td>
+                                        <td>
+                                            <input type="text" style="width:300px;height:30px" name="newsimg" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>新闻内容</td>
+                                        <td>
+                                            <textarea style="width:300px;height:200px" name="newscontent"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>添加时间</td>
+                                        <td style="text-align:left;">
+                                            <input type="date" style="width:150px;height:30px" name="addtime" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>添加栏目</td>
+                                        <td style="text-align:left;">
+                                            <input type="text" style="width:150px;height:30px" name="lanmu" />(tuijian 或 baijia)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input style="width:100px;height:30px;font-size: 18px;" type="submit" id="sub" value="添加" />
+                                            <input style="width:100px;height:30px;font-size: 18px;" type="reset" value="重置" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- 新闻列表  -->
+                    <div id="show-wrap">
+                        <table border="2">
+                            <tr>
+                                <th width="30">ID</th>
+                                <th width="200">新闻标题</th>
+                                <th width="200">新闻图片</th>
+                                <th width="370">新闻内容</th>
+                                <th width="100">添加时间</th>
+                                <th width="120">操作</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="show-wrap1" style="display: none">
+                        <table border="2">
+                            <tr>
+                                <th width="30">ID</th>
+                                <th width="200">新闻标题</th>
+                                <th width="200">新闻图片</th>
+                                <th width="370">新闻内容</th>
+                                <th width="100">添加时间</th>
+                                <th width="120">操作</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!-- 修改新闻页面 -->
+                <div id="r-wrap-1" style="display: none;">
+                    <span class="add-news" id="backBtn-1">返回新闻列表</span>
+                    <div id="updataNew" style="">
+                        <div class="add-wrap">
+                            <h3>修改新闻信息</h3>
+                            <form id="resnewForm">
+                                <table>
+                                    <tr style="display: none">
+                                        <td>
+                                            <input style="width:300px;height:30px " type="hidden" id="r-newsid" name="newsid" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>新闻标题</td>
+                                        <td>
+                                            <input style="width:300px;height:30px" type="text" id="r-newstitle" name="newstitle" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>新闻地址</td>
+                                        <td>
+                                            <input type="text" style="width:300px;height:30px" id="r-newsimg" name="newsimg" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>新闻内容</td>
+                                        <td>
+                                            <textarea style="width:300px;height:200px" id="r-newscontent" name="newscontent"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>添加时间</td>
+                                        <td style="text-align:left;">
+                                            <input type="date" style="width:150px;height:30px" id="r-addtime" name="addtime" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>添加栏目</td>
+                                        <td style="text-align:left;">
+                                            <input type="text" style="width:150px;height:30px" id="r-lanmu" name="lanmu" />(tuijian 或 baijia)
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input style="width:100px;height:30px;font-size: 18px;" type="submit" id="r-sub" value="确定" />
+                                            <input style="width:100px;height:30px;font-size: 18px;" type="reset" value="重置" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="javascripts/jquery-2.1.4.min.js"></script>
+    <!-- 加载xss.js文件 进行输出检查 -->
+    <script src="javascripts/xss.js"></script>
+    <script src="javascripts/manger.js"></script>
+    
+
+</body>
+
+</html>
